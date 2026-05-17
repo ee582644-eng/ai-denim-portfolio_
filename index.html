@@ -1,1 +1,652 @@
-# ai-denim-portfolio_
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Denim Fashion Photoshoot — Women’s Clothing</title>
+  <meta name="description" content="AI-нейрофотосессия для бренда женской denim-одежды: разные ракурсы, посадка, фактура ткани, детали и e-commerce визуал." />
+  <style>
+    :root {
+      --bg: #f6f1ea;
+      --paper: #fffaf4;
+      --ink: #161616;
+      --muted: #6f665d;
+      --line: rgba(20, 20, 20, .12);
+      --denim: #8bb0d4;
+      --deep: #27384a;
+      --olive: #6f6247;
+      --radius: 26px;
+      --shadow: 0 24px 70px rgba(20, 20, 20, .11);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 176, 212, .36), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(111, 98, 71, .20), transparent 30%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .nav span:last-child {
+      text-align: right;
+    }
+
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 28px;
+      align-items: stretch;
+      padding: 18px 0 54px;
+    }
+
+    .hero-copy {
+      background: rgba(255, 250, 244, .82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 62px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 600px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--deep);
+      background: rgba(139, 176, 212, .18);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--denim);
+      box-shadow: 0 0 0 5px rgba(139, 176, 212, .22);
+    }
+
+    h1 {
+      margin: 28px 0 22px;
+      font-size: clamp(44px, 7vw, 92px);
+      line-height: .92;
+      letter-spacing: -.07em;
+      max-width: 820px;
+    }
+
+    .lead {
+      font-size: clamp(18px, 2vw, 23px);
+      color: var(--muted);
+      max-width: 660px;
+      margin: 0;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .meta-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: rgba(255, 255, 255, .42);
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 22px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .meta-card span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 600px;
+      position: relative;
+      box-shadow: var(--shadow);
+      background: #ddd;
+    }
+
+    .hero-image img {
+      height: 100%;
+    }
+
+    .hero-label {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255, 250, 244, .78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, .45);
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--deep);
+      font-weight: 700;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 62px);
+      line-height: .98;
+      letter-spacing: -.05em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 680px;
+    }
+
+    .concept {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .concept-card {
+      min-height: 210px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 18px 42px rgba(20,20,20,.06);
+    }
+
+    .concept-card b {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .concept-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .shot {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 18px 48px rgba(20,20,20,.08);
+    }
+
+    .shot.large { grid-column: span 7; }
+    .shot.medium { grid-column: span 5; }
+    .shot.wide { grid-column: span 12; }
+    .shot.small { grid-column: span 4; }
+
+    .shot figure {
+      margin: 0;
+    }
+
+    .shot img {
+      aspect-ratio: 4 / 5;
+      transition: transform .5s ease;
+    }
+
+    .shot.wide img {
+      aspect-ratio: 16 / 8;
+    }
+
+    .shot:hover img {
+      transform: scale(1.025);
+    }
+
+    .caption {
+      padding: 18px 20px 22px;
+    }
+
+    .caption small {
+      display: block;
+      color: var(--olive);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+
+    .caption h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      letter-spacing: -.03em;
+    }
+
+    .caption p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .panel {
+      background: var(--deep);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: clamp(26px, 4vw, 46px);
+      box-shadow: var(--shadow);
+    }
+
+    .panel.light {
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .panel h3 {
+      margin: 0 0 18px;
+      font-size: 30px;
+      letter-spacing: -.04em;
+    }
+
+    .panel ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .panel li {
+      margin: 10px 0;
+      color: rgba(255,255,255,.80);
+    }
+
+    .panel.light li {
+      color: var(--muted);
+    }
+
+    .final {
+      padding: 58px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .final h2 {
+      margin-bottom: 18px;
+    }
+
+    .final p {
+      max-width: 820px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid var(--line);
+      margin-top: 22px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .section-head,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-image {
+        min-height: auto;
+      }
+
+      .hero-image img {
+        height: auto;
+      }
+
+      .hero-meta,
+      .concept {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .shot.large,
+      .shot.medium,
+      .shot.small,
+      .shot.wide {
+        grid-column: span 12;
+      }
+
+      .shot.wide img {
+        aspect-ratio: 4 / 5;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav span:last-child {
+        text-align: left;
+      }
+
+      .hero-copy {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .hero-meta,
+      .concept {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-label {
+        flex-direction: column;
+      }
+
+      section {
+        padding: 38px 0;
+      }
+
+      .final {
+        padding: 30px 22px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="nav">
+      <span class="brand">AI Denim Portfolio</span>
+      <span>Women’s clothing · Denim · E-commerce · Wildberries</span>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> AI fashion photoshoot</div>
+          <h1>Urban Denim Evening Campaign</h1>
+          <p class="lead">
+            Цельная AI-нейрофотосессия для бренда женской denim-одежды:
+            одна модель, один образ, городская локация и разные ракурсы для e-commerce визуала.
+          </p>
+        </div>
+
+        <div class="hero-meta">
+          <div class="meta-card"><strong>8</strong><span>готовых кадров</span></div>
+          <div class="meta-card"><strong>Denim</strong><span>фактура, швы, посадка</span></div>
+          <div class="meta-card"><strong>WB</strong><span>маркетплейс / rich-content</span></div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/cover.jpg" alt="Главный кадр AI denim fashion photoshoot" />
+        <div class="hero-label">
+          <span>AI Denim Fashion Photoshoot</span>
+          <span>Commercial fashion visual</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Задача проекта</h2>
+        <p>
+          Создать визуальный мини-кейс в нише женской одежды для e-commerce:
+          показать denim-образ так, чтобы были хорошо видны посадка, фактура ткани,
+          конструкция плеча, швы, рукава, ботинки, аксессуары и коммерческая читаемость товара.
+        </p>
+      </div>
+
+      <div class="concept">
+        <div class="concept-card">
+          <b>Образ</b>
+          <p>Голубое denim mini dress с рубашечным верхом, широкими структурными плечами и акцентом на талию.</p>
+        </div>
+        <div class="concept-card">
+          <b>Стилизация</b>
+          <p>Кепи, очки, оливковая suede-сумка и бежевые ботинки усиливают premium street style.</p>
+        </div>
+        <div class="concept-card">
+          <b>Локация</b>
+          <p>Европейская городская улица, каменная архитектура, мягкий вечерний свет и fashion-настроение.</p>
+        </div>
+        <div class="concept-card">
+          <b>Фокус</b>
+          <p>Фактура denim, швы, строчки, воротник, манжеты, посадка, складки ткани и движение.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Галерея кадров</h2>
+        <p>
+          Серия собрана как единая коммерческая съёмка: ракурсы не дублируют друг друга,
+          а закрывают разные задачи маркетплейса и fashion-контента.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <article class="shot large">
+          <figure>
+            <img src="assets/cover.jpg" alt="Cover кадр denim fashion photoshoot" loading="lazy" />
+            <figcaption class="caption">
+              <small>01 · Cover</small>
+              <h3>Главный кадр</h3>
+              <p>Полный рост, уверенная поза, целостный образ и понятная коммерческая подача.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="shot medium">
+          <figure>
+            <img src="assets/back-over-shoulder.jpg" alt="Ракурс со спины через плечо" loading="lazy" />
+            <figcaption class="caption">
+              <small>02 · Back view</small>
+              <h3>Со спины / через плечо</h3>
+              <p>Кадр показывает посадку сзади, форму силуэта, структуру плеч и длину mini dress.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="shot medium">
+          <figure>
+            <img src="assets/full-body-front.jpg" alt="Фронтальный кадр с местом под текст" loading="lazy" />
+            <figcaption class="caption">
+              <small>03 · Full body</small>
+              <h3>Полный рост</h3>
+              <p>Композиция с чистым фоном подходит для карточки товара, баннера или инфографики.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="shot large">
+          <figure>
+            <img src="assets/motion-walking.jpg" alt="Кадр в движении" loading="lazy" />
+            <figcaption class="caption">
+              <small>04 · Motion</small>
+              <h3>Кадр в движении</h3>
+              <p>Демонстрация живого fashion-настроения, походки, ботинок, ткани и естественных складок.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="shot small">
+          <figure>
+            <img src="assets/three-quarter-angle.jpg" alt="Ракурс 3/4" loading="lazy" />
+            <figcaption class="caption">
+              <small>05 · 3/4 angle</small>
+              <h3>Силуэт</h3>
+              <p>Ракурс помогает оценить линию талии, объём плеч и общий баланс образа.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="shot small">
+          <figure>
+            <img src="assets/denim-sleeve-detail.jpg" alt="Крупный план denim ткани и рукава" loading="lazy" />
+            <figcaption class="caption">
+              <small>06 · Detail shot</small>
+              <h3>Фактура ткани</h3>
+              <p>Крупный план denim: плетение, манжета, строчка, рукав, плечо и фурнитура.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="shot small">
+          <figure>
+            <img src="assets/half-body-layering.jpg" alt="Полупортрет и детали верха" loading="lazy" />
+            <figcaption class="caption">
+              <small>07 · Half body</small>
+              <h3>Верх образа</h3>
+              <p>Акцент на воротник, плечевую конструкцию, пояс, посадку и премиальный street style.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="shot wide">
+          <figure>
+            <img src="assets/boots-lower-detail.jpg" alt="Крупный план низа образа и ботинок" loading="lazy" />
+            <figcaption class="caption">
+              <small>08 · Product detail</small>
+              <h3>Низ образа и ботинки</h3>
+              <p>Деталь для rich-content: подол, движение ног, ботинки, шнуровка, подошва и фактура материалов.</p>
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="process">
+        <div class="panel">
+          <h3>Что показано в кейсе</h3>
+          <ul>
+            <li>Единая модель и единый denim-образ.</li>
+            <li>Разные ракурсы: full body, 3/4, back view, motion, detail.</li>
+            <li>Акцент на ткань, швы, посадку, плечевую конструкцию и аксессуары.</li>
+            <li>Кадры, пригодные для карточки товара, rich-content и баннера.</li>
+          </ul>
+        </div>
+
+        <div class="panel light">
+          <h3>Рабочий процесс</h3>
+          <ul>
+            <li>Анализ визуального ТЗ и e-commerce задачи.</li>
+            <li>Подбор единого fashion-образа в denim-сегменте.</li>
+            <li>Промптинг под разные ракурсы и задачи кадра.</li>
+            <li>Финальный отбор, проверка ткани, рук, швов и коммерческой читаемости.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="final">
+        <h2>Результат</h2>
+        <p>
+          Получилась цельная серия AI fashion-контента для женской denim-одежды:
+          визуально единая, коммерчески читаемая и подходящая для маркетплейса,
+          бренд-зоны, rich-content и портфолио нейро-дизайнера.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <span>AI Denim Fashion Photoshoot · Women’s Clothing</span>
+      <span>Portfolio mini-site for GitHub Pages</span>
+    </footer>
+  </main>
+</body>
+</html>
